@@ -24,43 +24,6 @@ MonoBehaviour:
     IgnoreDefaultType: 1
     AutoCollectShaders: 1
     Groups:
-    - GroupName: Actor
-      GroupDesc: 
-      AssetTags: 
-      ActiveRuleName: EnableGroup
-      Collectors:
-      - CollectPath: Assets/AssetRaw/Actor/donghua01/prefab
-        CollectorGUID: 057868028d017e94e8981bb6b0e76e0b
-        CollectorType: 0
-        AddressRuleName: AddressByFileName
-        PackRuleName: PackDirectory
-        FilterRuleName: CollectAll
-        AssetTags: 
-        UserData: 
-      - CollectPath: Assets/AssetRaw/Actor/LIAOYI/profab
-        CollectorGUID: dbecd8507348f3b4f98f44e44145ed91
-        CollectorType: 0
-        AddressRuleName: AddressByFileName
-        PackRuleName: PackDirectory
-        FilterRuleName: CollectAll
-        AssetTags: 
-        UserData: 
-      - CollectPath: Assets/AssetRaw/Actor/donghua01
-        CollectorGUID: 944f5f539ae5d7548a8b89414592c202
-        CollectorType: 2
-        AddressRuleName: AddressByFileName
-        PackRuleName: PackDirectory
-        FilterRuleName: CollectAll
-        AssetTags: 
-        UserData: 
-      - CollectPath: Assets/AssetRaw/Actor/LIAOYI
-        CollectorGUID: 952d60800d6cde54eb0410f8cd985c1e
-        CollectorType: 2
-        AddressRuleName: AddressByFileName
-        PackRuleName: PackDirectory
-        FilterRuleName: CollectAll
-        AssetTags: 
-        UserData: 
     - GroupName: Audios
       GroupDesc: 
       AssetTags: 
@@ -169,31 +132,7 @@ MonoBehaviour:
       GroupDesc: 
       AssetTags: 
       ActiveRuleName: EnableGroup
-      Collectors:
-      - CollectPath: Assets/AssetRaw/UIRaw/Atlas
-        CollectorGUID: 6d11fa91acc253840a648b58f23db139
-        CollectorType: 0
-        AddressRuleName: AddressByFileName
-        PackRuleName: PackDirectory
-        FilterRuleName: CollectAll
-        AssetTags: 
-        UserData: 
-      - CollectPath: Assets/AssetRaw/UIRaw/Raw
-        CollectorGUID: 6bc134b912ac6bb4399ea1bec4c11636
-        CollectorType: 0
-        AddressRuleName: AddressByFileName
-        PackRuleName: PackDirectory
-        FilterRuleName: CollectAll
-        AssetTags: 
-        UserData: 
-      - CollectPath: Assets/AssetArt/UI
-        CollectorGUID: d7f6739ed7466cb4c8eae84fb484901c
-        CollectorType: 0
-        AddressRuleName: AddressByFileName
-        PackRuleName: PackDirectory
-        FilterRuleName: CollectAll
-        AssetTags: 
-        UserData: 
+      Collectors: []
     - GroupName: Shader
       GroupDesc: 
       AssetTags: 
