@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Reflection;
 using GameLogic;
+using GameLogic.Common;
 using GameFramework;
 using UnityGameFramework.Runtime;
 using GameFramework.UI;
@@ -35,10 +36,19 @@ public partial class GameApp: Singleton<GameApp>
     /// </summary>
     private void StartGameLogic()
     {
-        //TODO 加载登录界面
-        GameModule.UI.AddUIGroup("LoginGroup");
-        GameModule.UI.OpenUIForm("LoginWindowForm", "LoginGroup");
+        //TODO 加载主界面
+        InitUIGroup();
     }
+
+    private void InitUIGroup()
+    {
+        int max = (int)UIGroupEnum.Max;
+        for (int i = 0; i < max; i++)
+        {
+            GameModule.UI.AddUIGroup(((UIGroupEnum)i).ToString());
+        }
+    }
+
 
     /// <summary>
     /// 关闭游戏。
