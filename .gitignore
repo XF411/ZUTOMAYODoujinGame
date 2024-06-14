@@ -44,6 +44,9 @@ ExportedObj/
 *.VC.db
 *.idea
 
+# Unity3D Editor setting config
+*.dwlt
+
 # Unity3D generated meta files
 *.pidb.meta
 *.pdb.meta
