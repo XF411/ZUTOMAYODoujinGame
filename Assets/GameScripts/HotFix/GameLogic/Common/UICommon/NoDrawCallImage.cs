@@ -1,9 +1,11 @@
 ﻿using UnityEngine.UI;
-
-public class NoDrawCallImage : Image
+namespace GameLogic.Common
 {
-    protected override void OnPopulateMesh(VertexHelper toFill)
+    public class NoDrawCallImage : Image
     {
-        toFill.Clear();
+        protected override void OnPopulateMesh(VertexHelper toFill)
+        {
+            toFill.Clear();
+        }
     }
 }
