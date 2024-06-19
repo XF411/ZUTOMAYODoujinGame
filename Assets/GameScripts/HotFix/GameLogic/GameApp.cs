@@ -38,6 +38,7 @@ public partial class GameApp: Singleton<GameApp>
     {
         //TODO 加载主界面
         InitUIGroup();
+        GameModule.UI.OpenUIForm("MainMenu", UIGroupEnum.MainMenu.ToString());
     }
 
     private void InitUIGroup()
