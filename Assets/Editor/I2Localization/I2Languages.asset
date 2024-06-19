@@ -53,6 +53,51 @@ MonoBehaviour:
       - "\u30B2\u30FC\u30E0\u30AA\u30FC\u30D0\u30FC"
       Flags: 000000
       Languages_Touch: []
+    - Term: BGMVolume
+      TermType: 0
+      Description: "\u80CC\u666F\u97F3\u4E50\u97F3\u91CF"
+      Languages:
+      - "\u80CC\u666F\u97F3\u4E50\u97F3\u91CF"
+      - Game Over
+      - "\u30B2\u30FC\u30E0\u30AA\u30FC\u30D0\u30FC"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: SoundVolume
+      TermType: 0
+      Description: "\u97F3\u6548\u97F3\u91CF"
+      Languages:
+      - "\u97F3\u6548\u97F3\u91CF"
+      - Game Over
+      - "\u30B2\u30FC\u30E0\u30AA\u30FC\u30D0\u30FC"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: UIVolume
+      TermType: 0
+      Description: "\u754C\u9762\u97F3\u91CF"
+      Languages:
+      - "\u754C\u9762\u97F3\u91CF"
+      - Game Over
+      - "\u30B2\u30FC\u30E0\u30AA\u30FC\u30D0\u30FC"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Window
+      TermType: 0
+      Description: "\u7A97\u53E3\u5316"
+      Languages:
+      - "\u7A97\u53E3\u5316"
+      - Window
+      - "\u30B2\u30FC\u30E0\u30AA\u30FC\u30D0\u30FC"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Full
+      TermType: 0
+      Description: "\u5168\u5C4F"
+      Languages:
+      - "\u5168\u5C4F"
+      - Full
+      - "\u30B2\u30FC\u30E0\u30AA\u30FC\u30D0\u30FC"
+      Flags: 000000
+      Languages_Touch: []
     CaseInsensitiveTerms: 0
     OnMissingTranslation: 1
     mTerm_AppName: 

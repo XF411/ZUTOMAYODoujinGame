@@ -3,3 +3,8 @@ GameName,Text,游戏名称,如是永夜,ZUTOMAYO,ずっと真夜中でいいの�
 GameStart,Text,开始游戏按钮的文字,开始游戏,Game Start,ゲーム開始
 GameSetting,Text,设置按钮显示的文字,设置,Setting,オプション
 OutGame,Text,结束游戏按钮的文字,退出游戏,Game Over,ゲームオーバー
+BGMVolume,Text,背景音乐音量,背景音乐音量,Game Over,ゲームオーバー
+SoundVolume,Text,音效音量,音效音量,Game Over,ゲームオーバー
+UIVolume,Text,界面音量,界面音量,Game Over,ゲームオーバー
+Window,Text,窗口化,窗口化,Window,ゲームオーバー
+Full,Text,全屏,全屏,Full,ゲームオーバー
