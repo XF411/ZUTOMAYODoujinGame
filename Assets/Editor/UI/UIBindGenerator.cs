@@ -5,20 +5,21 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 using GameLogic;
+using TMPro;
 
 public struct ComponentInfo
 {
     public string ComponentName;
     public string ComponentType;
     public string OriginalName;
-    public GameObject Parent;
+    public string ParentName;
 
-    public ComponentInfo(string componentName, string componentType, string originalName, GameObject parent)
+    public ComponentInfo(string componentName, string componentType, string originalName, string parentName)
     {
         ComponentName = componentName;
         ComponentType = componentType;
         OriginalName = originalName;
-        Parent = parent;
+        ParentName = parentName;
     }
 }
 
@@ -35,13 +36,13 @@ public static class UIBindGenerator
             return;
         }
 
-        GenerateScriptForObject(root, "GameLogic"); // 这里替换为你指定的命名空间
+        GenerateScriptForObject(root, "GameLogic");
     }
 
     private static void GenerateScriptForObject(GameObject obj, string namespaceName)
     {
         string className = obj.name + "Bind";
-        string outputPath = "Assets/GameScripts/HotFix/GameLogic/Login/UIBind/" + className + ".cs";
+        string outputPath = "Assets/GameScripts/HotFix/GameLogic/UI/UIBind/" + className + ".cs";
 
         // 创建保存目录
         Directory.CreateDirectory(Path.GetDirectoryName(outputPath));
@@ -58,17 +59,25 @@ public static class UIBindGenerator
         AssetDatabase.Refresh();
     }
 
-    private static void CollectComponentInfo(GameObject root, GameObject current, List<ComponentInfo> componentInfoList, Dictionary<string, int> nameCount, GameObject parent = null)
+    private static void CollectComponentInfo(GameObject root, GameObject current, List<ComponentInfo> componentInfoList, Dictionary<string, int> nameCount, string parentName = null)
     {
         foreach (Transform child in current.transform)
         {
             string originalName = child.name;
+            if (originalName.Contains("SubMeshUI"))
+            {
+                if (parentName != null && parentName.EndsWith("TextMeshProUGUI")) // 如果是TextMeshProUGUI的子物体，不需要绑定
+                {
+                    continue;
+                }
+            }
             string componentName = GetUniqueName(originalName, nameCount);
             string componentType = GetComponentType(child.gameObject);
+            string processedParentName = parentName;
 
             if (!string.IsNullOrEmpty(componentType))
             {
-                componentInfoList.Add(new ComponentInfo(componentName, componentType, originalName, parent));
+                componentInfoList.Add(new ComponentInfo(componentName, componentType, originalName, parentName));
 
                 // 如果是绑定脚本节点
                 if (componentType.EndsWith("Bind"))
@@ -77,13 +86,13 @@ public static class UIBindGenerator
                     GenerateScriptForObject(child.gameObject, "GameLogic");
 
                     // 添加调用BindUI的信息
-                    componentInfoList.Add(new ComponentInfo(componentName, componentType, originalName, parent));
+                    componentInfoList.Add(new ComponentInfo(componentName, componentType, originalName, parentName));
                     continue; // 跳过其子物体的遍历
                 }
             }
 
             // 继续遍历子节点
-            CollectComponentInfo(root, child.gameObject, componentInfoList, nameCount, child.gameObject);
+            CollectComponentInfo(root, child.gameObject, componentInfoList, nameCount, componentName);
         }
     }
 
@@ -155,7 +164,7 @@ public static class UIBindGenerator
 
         foreach (var info in componentInfoList)
         {
-            string parentObject = info.Parent == null ? "gameObject" : $"{info.Parent.name}.gameObject";
+            string parentObject = info.ParentName == null ? "gameObject" : $"{info.ParentName}.gameObject";
             sb.AppendLine($"            {info.ComponentName} = GameObjectCommon.FindComponentWithName<{info.ComponentType}>(\"{info.OriginalName}\", {parentObject});");
 
             // 检查是否是绑定脚本
