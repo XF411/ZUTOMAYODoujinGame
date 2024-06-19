@@ -6,8 +6,23 @@ using UnityEngine;
 using UnityEngine.UI;
 using GameLogic;
 
+public struct ComponentInfo
+{
+    public string ComponentName;
+    public string ComponentType;
+    public string OriginalName;
+    public GameObject Parent;
 
-public static class UIBindGenerator 
+    public ComponentInfo(string componentName, string componentType, string originalName, GameObject parent)
+    {
+        ComponentName = componentName;
+        ComponentType = componentType;
+        OriginalName = originalName;
+        Parent = parent;
+    }
+}
+
+public static class UIBindGenerator
 {
     [MenuItem("GameObject/ScriptGenerator/GeneratorUIBind")]
     public static void GenerateScript()
@@ -20,50 +35,70 @@ public static class UIBindGenerator
             return;
         }
 
-        string className = root.name + "Bind";
+        GenerateScriptForObject(root, "GameLogic"); // 这里替换为你指定的命名空间
+    }
+
+    private static void GenerateScriptForObject(GameObject obj, string namespaceName)
+    {
+        string className = obj.name + "Bind";
         string outputPath = "Assets/GameScripts/HotFix/GameLogic/Login/UIBind/" + className + ".cs";
 
         // 创建保存目录
         Directory.CreateDirectory(Path.GetDirectoryName(outputPath));
 
         // 收集组件信息
-        Dictionary<string, string> componentInfo = new Dictionary<string, string>();
-        CollectComponentInfo(root, root, componentInfo, new Dictionary<string, int>());
+        List<ComponentInfo> componentInfoList = new List<ComponentInfo>();
+        CollectComponentInfo(obj, obj, componentInfoList, new Dictionary<string, int>());
 
         // 生成脚本内容
-        string scriptContent = GenerateScriptContent(className, componentInfo);
+        string scriptContent = GenerateScriptContent(className, namespaceName, componentInfoList);
 
         // 写入脚本文件
         File.WriteAllText(outputPath, scriptContent);
         AssetDatabase.Refresh();
     }
 
-    private static void CollectComponentInfo(GameObject root, GameObject current, Dictionary<string, string> componentInfo, Dictionary<string, int> nameCount)
+    private static void CollectComponentInfo(GameObject root, GameObject current, List<ComponentInfo> componentInfoList, Dictionary<string, int> nameCount, GameObject parent = null)
     {
         foreach (Transform child in current.transform)
         {
-            string componentName = GetUniqueName(child.name, nameCount);
+            string originalName = child.name;
+            string componentName = GetUniqueName(originalName, nameCount);
             string componentType = GetComponentType(child.gameObject);
 
             if (!string.IsNullOrEmpty(componentType))
             {
-                componentInfo[componentName] = componentType;
+                componentInfoList.Add(new ComponentInfo(componentName, componentType, originalName, parent));
+
+                // 如果是绑定脚本节点
+                if (componentType.EndsWith("Bind"))
+                {
+                    // 重新生成该节点的绑定脚本
+                    GenerateScriptForObject(child.gameObject, "GameLogic");
+
+                    // 添加调用BindUI的信息
+                    componentInfoList.Add(new ComponentInfo(componentName, componentType, originalName, parent));
+                    continue; // 跳过其子物体的遍历
+                }
             }
 
-            if (!HasBindScript(child.gameObject))
-            {
-                CollectComponentInfo(root, child.gameObject, componentInfo, nameCount);
-            }
-            else
-            {
-                string bindClassName = child.gameObject.GetComponent<UIBindBase>().GetType().Name;
-                componentInfo[componentName] = bindClassName;
-            }
+            // 继续遍历子节点
+            CollectComponentInfo(root, child.gameObject, componentInfoList, nameCount, child.gameObject);
         }
     }
 
     private static string GetUniqueName(string baseName, Dictionary<string, int> nameCount)
     {
+        // 替换空格为下划线
+        baseName = baseName.Replace(" ", "_");
+
+        // 删除其他特殊符号
+        char[] invalidChars = { '-', '.', ',', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '+', '=', '[', ']', '{', '}', '|', '\\', ':', ';', '"', '\'', '<', '>', '/', '?', '~', '`' };
+        foreach (char invalidChar in invalidChars)
+        {
+            baseName = baseName.Replace(invalidChar.ToString(), string.Empty);
+        }
+
         if (!nameCount.ContainsKey(baseName))
         {
             nameCount[baseName] = 0;
@@ -75,6 +110,7 @@ public static class UIBindGenerator
 
     private static string GetComponentType(GameObject obj)
     {
+        if (obj.GetComponent<UIBindBase>() != null) return obj.GetComponent<UIBindBase>().GetType().Name;
         if (obj.GetComponent<Button>() != null) return "Button";
         if (obj.GetComponent<Text>() != null) return "Text";
         if (obj.GetComponent<Image>() != null) return "Image";
@@ -86,21 +122,14 @@ public static class UIBindGenerator
         if (obj.GetComponent<InputField>() != null) return "InputField";
         if (obj.GetComponent<Canvas>() != null) return "Canvas";
         if (obj.GetComponent<CanvasGroup>() != null) return "CanvasGroup";
-        if (obj.GetComponent<RectTransform>() != null) return "RectTransform";
         if (obj.GetComponent<ScrollRect>() != null) return "ScrollRect";
-        if (obj.GetComponent<TMPro.TextMeshProUGUI>() != null) return "TextMeshProUGUI";
         if (obj.GetComponent<TMPro.TMP_InputField>() != null) return "TMP_InputField";
         if (obj.GetComponent<TMPro.TMP_Dropdown>() != null) return "TMP_Dropdown";
+        if (obj.GetComponent<TMPro.TextMeshProUGUI>() != null) return "TextMeshProUGUI";
         return "RectTransform";
     }
 
-
-    private static bool HasBindScript(GameObject obj)
-    {
-        return obj.GetComponent<UIBindBase>() != null;
-    }
-
-    private static string GenerateScriptContent(string className, Dictionary<string, string> componentInfo)
+    private static string GenerateScriptContent(string className, string namespaceName, List<ComponentInfo> componentInfoList)
     {
         StringBuilder sb = new StringBuilder();
         sb.AppendLine("using UnityEngine;");
@@ -108,28 +137,39 @@ public static class UIBindGenerator
         sb.AppendLine("using TMPro;");
         sb.AppendLine("using GameLogic.Common;");
         sb.AppendLine();
-        sb.AppendLine("namespace GameLogic ");
-        sb.AppendLine("{");
-        sb.AppendLine(" public class " + className + " : UIBindBase");
-        sb.AppendLine(" {");
 
-        foreach (var kvp in componentInfo)
+        sb.AppendLine($"namespace {namespaceName}");
+        sb.AppendLine("{");
+
+        sb.AppendLine("    public class " + className + " : UIBindBase");
+        sb.AppendLine("    {");
+
+        foreach (var info in componentInfoList)
         {
-            sb.AppendLine($"    public {kvp.Value} {kvp.Key};");
+            sb.AppendLine($"        public {info.ComponentType} {info.ComponentName};");
         }
 
         sb.AppendLine();
-        sb.AppendLine("    protected override void BindUI()");
-        sb.AppendLine("    {");
+        sb.AppendLine("        public override void BindUI()");
+        sb.AppendLine("        {");
 
-        foreach (var kvp in componentInfo)
+        foreach (var info in componentInfoList)
         {
-            sb.AppendLine($"        {kvp.Key} = GameObjectCommon.FindComponentWithName<{kvp.Value}>(\"{kvp.Key}\", gameObject);");
+            string parentObject = info.Parent == null ? "gameObject" : $"{info.Parent.name}.gameObject";
+            sb.AppendLine($"            {info.ComponentName} = GameObjectCommon.FindComponentWithName<{info.ComponentType}>(\"{info.OriginalName}\", {parentObject});");
+
+            // 检查是否是绑定脚本
+            if (info.ComponentType.EndsWith("Bind"))
+            {
+                sb.AppendLine($"            {info.ComponentName}.BindUI();");
+            }
         }
 
-        sb.AppendLine("     }");
-        sb.AppendLine(" }");
+        sb.AppendLine("        }");
+        sb.AppendLine("    }");
+
         sb.AppendLine("}");
+
         return sb.ToString();
     }
 }
