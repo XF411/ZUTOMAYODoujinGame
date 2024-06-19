@@ -81,11 +81,9 @@ namespace UnityGameFramework.Runtime
 
         static DefaultLocalizationHelper()
         {
-            RegisterLanguageMap(Language.English);
-            RegisterLanguageMap(Language.ChineseSimplified, "Chinese");
-            RegisterLanguageMap(Language.ChineseTraditional);
-            RegisterLanguageMap(Language.Japanese);
-            RegisterLanguageMap(Language.Korean);
+            RegisterLanguageMap(Language.ChineseSimplified, "Chinese (Simplified)");
+            RegisterLanguageMap(Language.Japanese, "Japanese");
+            RegisterLanguageMap(Language.English, "English");
         }
 
         private static void RegisterLanguageMap(Language language, string str = "")

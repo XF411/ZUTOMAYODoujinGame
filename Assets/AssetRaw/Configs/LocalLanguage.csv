@@ -1,0 +1,5 @@
+﻿Key,Type,Desc,Chinese (Simplified),English,Japanese
+GameName,Text,游戏名称,如是永夜,ZUTOMAYO,ずっと真夜中でいいのに。
+GameStart,Text,开始游戏按钮的文字,开始游戏,Game Start,ゲーム開始
+GameSetting,Text,设置按钮显示的文字,设置,Setting,オプション
+OutGame,Text,结束游戏按钮的文字,退出游戏,Game Over,ゲームオーバー

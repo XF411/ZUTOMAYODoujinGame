@@ -26,6 +26,33 @@ MonoBehaviour:
       - "\u65E5\u8BED\u6D4B\u8BD5"
       Flags: 000000
       Languages_Touch: []
+    - Term: GameStart
+      TermType: 0
+      Description: "\u5F00\u59CB\u6E38\u620F\u6309\u94AE\u7684\u6587\u5B57"
+      Languages:
+      - "\u5F00\u59CB\u6E38\u620F"
+      - Game Start
+      - "\u30B2\u30FC\u30E0\u958B\u59CB"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: GameSetting
+      TermType: 0
+      Description: "\u8BBE\u7F6E\u6309\u94AE\u663E\u793A\u7684\u6587\u5B57"
+      Languages:
+      - "\u8BBE\u7F6E"
+      - Setting
+      - "\u30AA\u30D7\u30B7\u30E7\u30F3"
+      Flags: 000000
+      Languages_Touch: []
+    - Term: OutGame
+      TermType: 0
+      Description: "\u7ED3\u675F\u6E38\u620F\u6309\u94AE\u7684\u6587\u5B57"
+      Languages:
+      - "\u9000\u51FA\u6E38\u620F"
+      - Game Over
+      - "\u30B2\u30FC\u30E0\u30AA\u30FC\u30D0\u30FC"
+      Flags: 000000
+      Languages_Touch: []
     CaseInsensitiveTerms: 0
     OnMissingTranslation: 1
     mTerm_AppName: 
@@ -51,7 +78,7 @@ MonoBehaviour:
     GoogleUpdateSynchronization: 1
     GoogleUpdateDelay: 0
     Assets: []
-    Spreadsheet_LocalFileName: Editor/I2Localization/LocalLanguage.csv
+    Spreadsheet_LocalFileName: AssetRaw/Configs/LocalLanguage.csv
     Spreadsheet_LocalCSVSeparator: ','
     Spreadsheet_LocalCSVEncoding: utf-8
     Spreadsheet_SpecializationAsRows: 1

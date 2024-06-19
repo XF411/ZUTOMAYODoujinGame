@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -187,6 +186,26 @@ PrefabInstance:
       propertyPath: m_InstanceRoot
       value: 
       objectReference: {fileID: 226473277}
+    - target: {fileID: 11461470, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 3}
+      propertyPath: m_InnerLocalizationCSV
+      value: 
+      objectReference: {fileID: 4900000, guid: 281c038d28d343b44a3560c492c4306e, type: 3}
+    - target: {fileID: 11461470, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 3}
+      propertyPath: m_AllLanguage.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11461470, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 3}
+      propertyPath: m_AllLanguage.Array.data[0]
+      value: Chinese (Simplified)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11461470, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 3}
+      propertyPath: m_AllLanguage.Array.data[1]
+      value: Japanese
+      objectReference: {fileID: 0}
+    - target: {fileID: 11461470, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 3}
+      propertyPath: m_AllLanguage.Array.data[2]
+      value: English
+      objectReference: {fileID: 0}
     - target: {fileID: 11494652, guid: adb3eb1c35fcff14f89fba7b05c9d71c, type: 3}
       propertyPath: m_InstanceRoot
       value: 

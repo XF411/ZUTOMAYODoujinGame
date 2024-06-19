@@ -146,19 +146,6 @@ MonoBehaviour:
         FilterRuleName: CollectShader
         AssetTags: 
         UserData: 
-    - GroupName: DialogArt
-      GroupDesc: 
-      AssetTags: 
-      ActiveRuleName: EnableGroup
-      Collectors:
-      - CollectPath: Assets/AssetArt/Dialog
-        CollectorGUID: 2f1ec94403c39214d8f8f7034ad453c0
-        CollectorType: 0
-        AddressRuleName: AddressByFileName
-        PackRuleName: PackDirectory
-        FilterRuleName: CollectAll
-        AssetTags: 
-        UserData: 
   - PackageName: OtherPackage
     PackageDesc: 
     EnableAddressable: 1
