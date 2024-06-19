@@ -782,6 +782,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2925929759015906172}
   - component: {fileID: 2988073094055828835}
+  - component: {fileID: 5891049360987144155}
   m_Layer: 5
   m_Name: MainMenu
   m_TagString: Untagged
@@ -829,6 +830,26 @@ MonoBehaviour:
   anchoredPosition: {x: 0.5, y: 0.5}
   DisplayList:
   - {fileID: 271888552201651073}
+--- !u!114 &5891049360987144155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6796558432418005134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 758b811edd0b4414287bf13fd6515991, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imgBg: {fileID: 0}
+  transButtonList: {fileID: 0}
+  btnStart: {fileID: 0}
+  tmpStart: {fileID: 0}
+  btnSetting: {fileID: 0}
+  tmpSetting: {fileID: 0}
+  btnOut: {fileID: 0}
+  tmpOut: {fileID: 0}
 --- !u!1 &7866116371907159919
 GameObject:
   m_ObjectHideFlags: 0
@@ -841,7 +862,7 @@ GameObject:
   - component: {fileID: 931497006807604026}
   - component: {fileID: 8264953992530181583}
   m_Layer: 5
-  m_Name: tmpSetting
+  m_Name: tmpOut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

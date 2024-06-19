@@ -6,6 +6,6 @@ namespace GameLogic
 {
     public abstract class UIBindBase : MonoBehaviour
     {
-        protected abstract void BindUI();
+        public abstract void BindUI();
     }
 }
