@@ -37,14 +37,14 @@ namespace GameMain
 
         private void InitLanguageSettings()
         {
-            bool isEditorMode = Application.platform == RuntimePlatform.WindowsEditor || 
-                                Application.platform == RuntimePlatform.OSXEditor || 
-                                Application.platform == RuntimePlatform.LinuxEditor;
-            if (isEditorMode && GameModule.Base.EditorLanguage != Language.Unspecified)
-            {
-                // 编辑器资源模式直接使用 Inspector 上设置的语言
-                return;
-            }
+            //bool isEditorMode = Application.platform == RuntimePlatform.WindowsEditor || 
+            //                    Application.platform == RuntimePlatform.OSXEditor || 
+            //                    Application.platform == RuntimePlatform.LinuxEditor;
+            //if (isEditorMode && GameModule.Base.EditorLanguage != Language.Unspecified)
+            //{
+            //    // 编辑器资源模式直接使用 Inspector 上设置的语言
+            //    return;
+            //}
 
             Language language = GameModule.Localization.Language;
             if (GameModule.Setting.HasSetting(Constant.Setting.Language))
@@ -59,11 +59,14 @@ namespace GameMain
                     Log.Error("Init language error, reason {0}",exception.ToString());
                 }
             }
+            else
+            {
+                GameModule.Setting.SetString(Constant.Setting.Language, language.ToString());
+            }
 
             if (language != Language.English
                 && language != Language.ChineseSimplified
-                && language != Language.ChineseTraditional
-                && language != Language.Korean)
+                && language != Language.Japanese)
             {
                 // 若是暂不支持的语言，则使用英语
                 language = Language.English;

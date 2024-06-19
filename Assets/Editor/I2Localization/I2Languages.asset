@@ -17,76 +17,31 @@ MonoBehaviour:
     UserAgreesToHaveItInsideThePluginsFolder: 0
     GoogleLiveSyncIsUptoDate: 1
     mTerms:
-    - Term: GameName
-      TermType: 0
-      Description: "\u6E38\u620F\u540D\u79F0"
-      Languages:
-      - "\u4E2D\u6587\u6D4B\u8BD5"
-      - "\u82F1\u6587\u6D4B\u8BD5"
-      - "\u65E5\u8BED\u6D4B\u8BD5"
-      Flags: 000000
-      Languages_Touch: []
-    - Term: GameStart
-      TermType: 0
-      Description: "\u5F00\u59CB\u6E38\u620F\u6309\u94AE\u7684\u6587\u5B57"
-      Languages:
-      - "\u5F00\u59CB\u6E38\u620F"
-      - Game Start
-      - "\u30B2\u30FC\u30E0\u958B\u59CB"
-      Flags: 000000
-      Languages_Touch: []
-    - Term: GameSetting
-      TermType: 0
-      Description: "\u8BBE\u7F6E\u6309\u94AE\u663E\u793A\u7684\u6587\u5B57"
-      Languages:
-      - "\u8BBE\u7F6E"
-      - Setting
-      - "\u30AA\u30D7\u30B7\u30E7\u30F3"
-      Flags: 000000
-      Languages_Touch: []
-    - Term: OutGame
-      TermType: 0
-      Description: "\u7ED3\u675F\u6E38\u620F\u6309\u94AE\u7684\u6587\u5B57"
-      Languages:
-      - "\u9000\u51FA\u6E38\u620F"
-      - Game Over
-      - "\u30B2\u30FC\u30E0\u30AA\u30FC\u30D0\u30FC"
-      Flags: 000000
-      Languages_Touch: []
     - Term: BGMVolume
       TermType: 0
       Description: "\u80CC\u666F\u97F3\u4E50\u97F3\u91CF"
       Languages:
       - "\u80CC\u666F\u97F3\u4E50\u97F3\u91CF"
-      - Game Over
       - "\u30B2\u30FC\u30E0\u30AA\u30FC\u30D0\u30FC"
+      - Game Over
       Flags: 000000
       Languages_Touch: []
-    - Term: SoundVolume
+    - Term: Cancel
       TermType: 0
-      Description: "\u97F3\u6548\u97F3\u91CF"
+      Description: "\u53D6\u6D88"
       Languages:
-      - "\u97F3\u6548\u97F3\u91CF"
-      - Game Over
+      - "\u53D6\u6D88"
       - "\u30B2\u30FC\u30E0\u30AA\u30FC\u30D0\u30FC"
+      - Cancel
       Flags: 000000
       Languages_Touch: []
-    - Term: UIVolume
+    - Term: Confrim
       TermType: 0
-      Description: "\u754C\u9762\u97F3\u91CF"
+      Description: "\u786E\u8BA4"
       Languages:
-      - "\u754C\u9762\u97F3\u91CF"
-      - Game Over
+      - "\u786E\u8BA4"
       - "\u30B2\u30FC\u30E0\u30AA\u30FC\u30D0\u30FC"
-      Flags: 000000
-      Languages_Touch: []
-    - Term: Window
-      TermType: 0
-      Description: "\u7A97\u53E3\u5316"
-      Languages:
-      - "\u7A97\u53E3\u5316"
-      - Window
-      - "\u30B2\u30FC\u30E0\u30AA\u30FC\u30D0\u30FC"
+      - Confrim
       Flags: 000000
       Languages_Touch: []
     - Term: Full
@@ -94,22 +49,85 @@ MonoBehaviour:
       Description: "\u5168\u5C4F"
       Languages:
       - "\u5168\u5C4F"
-      - Full
       - "\u30B2\u30FC\u30E0\u30AA\u30FC\u30D0\u30FC"
+      - Full
+      Flags: 000000
+      Languages_Touch: []
+    - Term: GameName
+      TermType: 0
+      Description: "\u6E38\u620F\u540D\u79F0"
+      Languages:
+      - "\u5982\u662F\u6C38\u591C"
+      - "\u305A\u3063\u3068\u771F\u591C\u4E2D\u3067\u3044\u3044\u306E\u306B\u3002"
+      - ZUTOMAYO
+      Flags: 000000
+      Languages_Touch: []
+    - Term: GameSetting
+      TermType: 0
+      Description: "\u8BBE\u7F6E\u6309\u94AE\u663E\u793A\u7684\u6587\u5B57"
+      Languages:
+      - "\u8BBE\u7F6E"
+      - "\u30AA\u30D7\u30B7\u30E7\u30F3"
+      - Setting
+      Flags: 000000
+      Languages_Touch: []
+    - Term: GameStart
+      TermType: 0
+      Description: "\u5F00\u59CB\u6E38\u620F\u6309\u94AE\u7684\u6587\u5B57"
+      Languages:
+      - "\u5F00\u59CB\u6E38\u620F"
+      - "\u30B2\u30FC\u30E0\u958B\u59CB"
+      - Game Start
+      Flags: 000000
+      Languages_Touch: []
+    - Term: OutGame
+      TermType: 0
+      Description: "\u7ED3\u675F\u6E38\u620F\u6309\u94AE\u7684\u6587\u5B57"
+      Languages:
+      - "\u9000\u51FA\u6E38\u620F"
+      - "\u30B2\u30FC\u30E0\u30AA\u30FC\u30D0\u30FC"
+      - Game Over
+      Flags: 000000
+      Languages_Touch: []
+    - Term: SoundVolume
+      TermType: 0
+      Description: "\u97F3\u6548\u97F3\u91CF"
+      Languages:
+      - "\u97F3\u6548\u97F3\u91CF"
+      - "\u30B2\u30FC\u30E0\u30AA\u30FC\u30D0\u30FC"
+      - Game Over
+      Flags: 000000
+      Languages_Touch: []
+    - Term: UIVolume
+      TermType: 0
+      Description: "\u754C\u9762\u97F3\u91CF"
+      Languages:
+      - "\u754C\u9762\u97F3\u91CF"
+      - "\u30B2\u30FC\u30E0\u30AA\u30FC\u30D0\u30FC"
+      - Game Over
+      Flags: 000000
+      Languages_Touch: []
+    - Term: Window
+      TermType: 0
+      Description: "\u7A97\u53E3\u5316"
+      Languages:
+      - "\u7A97\u53E3\u5316"
+      - "\u30B2\u30FC\u30E0\u30AA\u30FC\u30D0\u30FC"
+      - Window
       Flags: 000000
       Languages_Touch: []
     CaseInsensitiveTerms: 0
     OnMissingTranslation: 1
-    mTerm_AppName: 
+    mTerm_AppName: GameName
     mLanguages:
     - Name: Chinese (Simplified)
       Code: zh-CN
       Flags: 0
-    - Name: English
-      Code: en
-      Flags: 0
     - Name: Japanese
       Code: ja
+      Flags: 0
+    - Name: English
+      Code: en
       Flags: 0
     IgnoreDeviceLanguage: 0
     _AllowUnloadingLanguages: 0

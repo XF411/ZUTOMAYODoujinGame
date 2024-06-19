@@ -5,6 +5,7 @@ using GameLogic.Common;
 using GameFramework;
 using UnityGameFramework.Runtime;
 using GameFramework.UI;
+using UnityEngine;
 
 public partial class GameApp: Singleton<GameApp>
 {
@@ -19,6 +20,7 @@ public partial class GameApp: Singleton<GameApp>
         s_HotfixAssembly = (List<Assembly>)objects[0];
         Log.Warning("======= 看到此条日志代表你成功运行了热更新代码 =======");
         Log.Warning("======= Entrance GameApp =======");
+        Screen.SetResolution(1280, 720, false);
         Instance.InitSystem();
         Instance.Start();
         Utility.Unity.AddUpdateListener(Instance.Update);
@@ -46,7 +48,7 @@ public partial class GameApp: Singleton<GameApp>
         int max = (int)UIGroupEnum.Max;
         for (int i = 0; i < max; i++)
         {
-            GameModule.UI.AddUIGroup(((UIGroupEnum)i).ToString());
+            GameModule.UI.AddUIGroup(((UIGroupEnum)i).ToString(),i);
         }
     }
 

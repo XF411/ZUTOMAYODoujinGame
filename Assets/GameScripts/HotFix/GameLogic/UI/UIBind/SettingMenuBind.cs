@@ -57,11 +57,11 @@ namespace GameLogic
         public Button btnNextDisplayResolution;
         public Image Image5;
         public RectTransform transFunBtnList;
-        public Button btnNextDisplayMode1;
+        public Button btnCancel;
         public Image Image6;
         public TextMeshProUGUI tmpCancel;
         public RectTransform TMP_SubMeshUI_fusionpixel12pxproportionalzh_hans_SDF_Material__LiberationSans_SDF_Atlas8;
-        public Button btnLastDisplayMode1;
+        public Button btnConfirm;
         public Image Image7;
         public TextMeshProUGUI tmpConfirm;
         public RectTransform TMP_SubMeshUI_fusionpixel12pxproportionalzh_hans_SDF_Material__LiberationSans_SDF_Atlas9;
@@ -118,13 +118,13 @@ namespace GameLogic
             btnNextDisplayResolution = GameObjectCommon.FindComponentWithName<Button>("btnNextDisplayResolution", tmpCurDisplayResolution.gameObject);
             Image5 = GameObjectCommon.FindComponentWithName<Image>("Image", btnNextDisplayResolution.gameObject);
             transFunBtnList = GameObjectCommon.FindComponentWithName<RectTransform>("transFunBtnList", transLayout.gameObject);
-            btnNextDisplayMode1 = GameObjectCommon.FindComponentWithName<Button>("btnNextDisplayMode", transFunBtnList.gameObject);
-            Image6 = GameObjectCommon.FindComponentWithName<Image>("Image", btnNextDisplayMode1.gameObject);
-            tmpCancel = GameObjectCommon.FindComponentWithName<TextMeshProUGUI>("tmpCancel", btnNextDisplayMode1.gameObject);
+            btnCancel = GameObjectCommon.FindComponentWithName<Button>("btnCancel", transFunBtnList.gameObject);
+            Image6 = GameObjectCommon.FindComponentWithName<Image>("Image", btnCancel.gameObject);
+            tmpCancel = GameObjectCommon.FindComponentWithName<TextMeshProUGUI>("tmpCancel", btnCancel.gameObject);
             TMP_SubMeshUI_fusionpixel12pxproportionalzh_hans_SDF_Material__LiberationSans_SDF_Atlas8 = GameObjectCommon.FindComponentWithName<RectTransform>("TMP SubMeshUI [fusion-pixel-12px-proportional-zh_hans SDF Material + LiberationSans SDF Atlas]", tmpCancel.gameObject);
-            btnLastDisplayMode1 = GameObjectCommon.FindComponentWithName<Button>("btnLastDisplayMode", transFunBtnList.gameObject);
-            Image7 = GameObjectCommon.FindComponentWithName<Image>("Image", btnLastDisplayMode1.gameObject);
-            tmpConfirm = GameObjectCommon.FindComponentWithName<TextMeshProUGUI>("tmpConfirm", btnLastDisplayMode1.gameObject);
+            btnConfirm = GameObjectCommon.FindComponentWithName<Button>("btnConfirm", transFunBtnList.gameObject);
+            Image7 = GameObjectCommon.FindComponentWithName<Image>("Image", btnConfirm.gameObject);
+            tmpConfirm = GameObjectCommon.FindComponentWithName<TextMeshProUGUI>("tmpConfirm", btnConfirm.gameObject);
             TMP_SubMeshUI_fusionpixel12pxproportionalzh_hans_SDF_Material__LiberationSans_SDF_Atlas9 = GameObjectCommon.FindComponentWithName<RectTransform>("TMP SubMeshUI [fusion-pixel-12px-proportional-zh_hans SDF Material + LiberationSans SDF Atlas]", tmpConfirm.gameObject);
         }
     }

@@ -1,10 +1,12 @@
-﻿Key,Type,Desc,Chinese (Simplified),English,Japanese
-GameName,Text,游戏名称,如是永夜,ZUTOMAYO,ずっと真夜中でいいのに。
-GameStart,Text,开始游戏按钮的文字,开始游戏,Game Start,ゲーム開始
-GameSetting,Text,设置按钮显示的文字,设置,Setting,オプション
-OutGame,Text,结束游戏按钮的文字,退出游戏,Game Over,ゲームオーバー
-BGMVolume,Text,背景音乐音量,背景音乐音量,Game Over,ゲームオーバー
-SoundVolume,Text,音效音量,音效音量,Game Over,ゲームオーバー
-UIVolume,Text,界面音量,界面音量,Game Over,ゲームオーバー
-Window,Text,窗口化,窗口化,Window,ゲームオーバー
-Full,Text,全屏,全屏,Full,ゲームオーバー
+﻿Key,Type,Desc,Chinese (Simplified),Japanese,English
+BGMVolume,Text,背景音乐音量,背景音乐音量,ゲームオーバー,Game Over
+Cancel,Text,取消,取消,ゲームオーバー,Cancel
+Confrim,Text,确认,确认,ゲームオーバー,Confrim
+Full,Text,全屏,全屏,ゲームオーバー,Full
+GameName,Text,游戏名称,如是永夜,ずっと真夜中でいいのに。,ZUTOMAYO
+GameSetting,Text,设置按钮显示的文字,设置,オプション,Setting
+GameStart,Text,开始游戏按钮的文字,开始游戏,ゲーム開始,Game Start
+OutGame,Text,结束游戏按钮的文字,退出游戏,ゲームオーバー,Game Over
+SoundVolume,Text,音效音量,音效音量,ゲームオーバー,Game Over
+UIVolume,Text,界面音量,界面音量,ゲームオーバー,Game Over
+Window,Text,窗口化,窗口化,ゲームオーバー,Window

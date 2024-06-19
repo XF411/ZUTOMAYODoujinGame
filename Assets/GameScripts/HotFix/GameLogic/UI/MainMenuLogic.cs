@@ -1,7 +1,9 @@
 using GameFramework.Localization;
+using GameLogic.Common;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityGameFramework.Runtime;
 
@@ -37,17 +39,25 @@ namespace GameLogic
 
         private void OnQuitClick()
         {
-            Debug.Log("Quit Game");
+            Log.Debug("Quit Game");
+#if UNITY_EDITOR
+            if (EditorApplication.isPlaying)
+            {
+                EditorApplication.isPlaying = false;
+            }
+#endif
+            Application.Quit();
         }
 
         private void OnSettingClick()
         {
-           Debug.Log("Setting");
+            Log.Debug("Setting");
+            GameModule.UI.OpenUIForm("SettingMenu", UIGroupEnum.Popups.ToString());
         }
 
         private void OnStartClick()
         {
-            Debug.Log("Start Game");
+            Log.Debug("Start Game");
         }
     }
 }
