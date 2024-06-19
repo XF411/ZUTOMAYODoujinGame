@@ -17,6 +17,9 @@ namespace GameMain
         {
             base.OnEnter(procedureOwner);
 
+            // 显示配置：根据用户配置数据，设置即将使用的显示选项,默认为窗口模式
+            InitDisplaySettings();
+
             // 语言配置：设置当前使用的语言，如果不设置，则默认使用操作系统语言
             InitLanguageSettings();
 
@@ -82,6 +85,12 @@ namespace GameMain
             GameModule.Sound.Mute("UISound", GameModule.Setting.GetBool(Constant.Setting.UISoundMuted, false));
             GameModule.Sound.SetVolume("UISound", GameModule.Setting.GetFloat(Constant.Setting.UISoundVolume, 0.5f));
             Log.Info("Init sound settings complete.");
+        }
+
+        private void InitDisplaySettings()
+        {
+            GameModule.Setting.GetBool(Constant.Setting.GameDisplayMode, false);//false为窗口模式,true为全屏模式
+            GameModule.Setting.GetInt(Constant.Setting.GameDisplayMode, 0);
         }
     }
 }

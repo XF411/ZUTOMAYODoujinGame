@@ -13,6 +13,8 @@
             public const string SoundVolume = "Setting.SoundVolume";
             public const string UISoundMuted = "Setting.UISoundMuted";
             public const string UISoundVolume = "Setting.UISoundVolume";
+            public const string GameDisplayMode = "Setting.GameDisplayMode";//窗口还是全屏
+            public const string GameDisplayResolution = "Setting.GameDisplayResolution";//具体分辨率
         }
     }
 }
