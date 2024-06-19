@@ -20,6 +20,7 @@ public partial class GameApp: Singleton<GameApp>
         s_HotfixAssembly = (List<Assembly>)objects[0];
         Log.Warning("======= 看到此条日志代表你成功运行了热更新代码 =======");
         Log.Warning("======= Entrance GameApp =======");
+        QualitySettings.vSyncCount = 0;
         Screen.SetResolution(1280, 720, false);
         Instance.InitSystem();
         Instance.Start();
