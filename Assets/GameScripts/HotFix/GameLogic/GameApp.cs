@@ -20,7 +20,9 @@ public partial class GameApp: Singleton<GameApp>
         s_HotfixAssembly = (List<Assembly>)objects[0];
         Log.Warning("======= 看到此条日志代表你成功运行了热更新代码 =======");
         Log.Warning("======= Entrance GameApp =======");
+        //关闭垂直同步，否则游戏的帧率设置不生效
         QualitySettings.vSyncCount = 0;
+        //开发期间的临时代码，需要删除 TODO
         Screen.SetResolution(1280, 720, false);
         Instance.InitSystem();
         Instance.Start();

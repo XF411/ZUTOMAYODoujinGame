@@ -58,6 +58,8 @@ namespace GameLogic
         private void OnStartClick()
         {
             Log.Debug("Start Game");
+            RPGSytem.Instance.EnterGame();
+            Close();
         }
     }
 }
