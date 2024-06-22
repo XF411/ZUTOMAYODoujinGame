@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!612988286 &4096168566840163508
+SpriteAtlasAsset:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: TilemapRaw_Buildings_HouseTile
+  serializedVersion: 2
+  m_MasterAtlas: {fileID: 0}
+  m_ImporterData:
+    packables:
+    - {fileID: -1371993218, guid: 08e068dcd0cbb42469d9275d6b0c667f, type: 3}
+    - {fileID: 21300000, guid: 93b078144677d40a3b293ce1ab22b320, type: 3}
+    - {fileID: 21300000, guid: 3c64c92d5bfb0442b8b8c7b3fc5b5ce2, type: 3}
+    - {fileID: 21300000, guid: 95662b19b704c4f93ae33e666c334adf, type: 3}
+  m_IsVariant: 0

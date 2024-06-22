@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!612988286 &4096168566840163508
+SpriteAtlasAsset:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: TilemapRaw_Faces
+  serializedVersion: 2
+  m_MasterAtlas: {fileID: 0}
+  m_ImporterData:
+    packables:
+    - {fileID: 21300000, guid: 2acedd98a2e4247569fc702d2b8fc91d, type: 3}
+    - {fileID: 21300000, guid: 36e7d59ac1efc4cf7bc6a250df52e2b4, type: 3}
+    - {fileID: 21300000, guid: 91720d10e0c0c489f80bd693c4a619b1, type: 3}
+    - {fileID: 21300000, guid: e62c299aa3fef458f9f46e8a98fc0608, type: 3}
+    - {fileID: 21300000, guid: 9250cb0d0524f439fb2e48d5ecc828e5, type: 3}
+    - {fileID: 21300000, guid: a4d021a0b724a479f8c02a5fdcb275b3, type: 3}
+    - {fileID: 21300000, guid: 4fc8589904831423495909d20ce74f23, type: 3}
+    - {fileID: 21300000, guid: ac88bbac471db4606bc5c60c89eff7f1, type: 3}
+    - {fileID: 21300000, guid: 3a465f460d75b4ec18ebd486218e7339, type: 3}
+    - {fileID: 21300000, guid: 70fb0fc6beb2647a897e9b1683114fce, type: 3}
+    - {fileID: 21300000, guid: fb60fb2dac6334bcda242a3fa42dfa34, type: 3}
+    - {fileID: 21300000, guid: 954616e3c701f4e22bd74bbccd87ccc2, type: 3}
+    - {fileID: 21300000, guid: bcb4accdbcb044b98bc839a4ab34d0f6, type: 3}
+    - {fileID: 21300000, guid: 67d354b9f685e4e1b90255eb84bc5abe, type: 3}
+    - {fileID: 21300000, guid: 0ebf15807ee9d4dcaa0a1aed0fadf257, type: 3}
+    - {fileID: 21300000, guid: 63a5eb4156cc3417896789f322630021, type: 3}
+    - {fileID: 21300000, guid: 7951faae60d314030a0981ea02e3c592, type: 3}
+    - {fileID: 21300000, guid: 602815581e11949c69342f9e76c868f4, type: 3}
+    - {fileID: 21300000, guid: ea77018ff180a4f759488a662f67da94, type: 3}
+  m_IsVariant: 0

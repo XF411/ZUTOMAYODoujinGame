@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!612988286 &4096168566840163508
+SpriteAtlasAsset:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: TilemapRaw_Items_New Plant
+  serializedVersion: 2
+  m_MasterAtlas: {fileID: 0}
+  m_ImporterData:
+    packables:
+    - {fileID: 21300000, guid: a190370c9a26a43aa9c3e596f8976fc4, type: 3}
+    - {fileID: 21300000, guid: 7fa27847daa7848cd8221a18379f7a21, type: 3}
+    - {fileID: 21300000, guid: 738078985c017481f8d443cf821e26b5, type: 3}
+    - {fileID: 21300000, guid: 38565caefc0504f3f9cb90ce3c5d3c3c, type: 3}
+    - {fileID: 21300000, guid: b2299da4eb0be49f0843d0e1fbafbed1, type: 3}
+    - {fileID: 21300000, guid: e4373ab1bca4244e89aa5c948b14f09f, type: 3}
+    - {fileID: 21300000, guid: 1683a58ffb6f243019e331431169e852, type: 3}
+    - {fileID: -1270250029, guid: 95e7e06c6bf4644f3a4bc7b164e261bf, type: 3}
+    - {fileID: 21300000, guid: 18dd810d9429d489cae29f0f11a4d177, type: 3}
+    - {fileID: 1758879028, guid: 2367379c11bac476d8ae816305d1bf35, type: 3}
+    - {fileID: 21300000, guid: 145ecd71b23ff4ef1ae4b88ba1820deb, type: 3}
+    - {fileID: 21300000, guid: 9f9b0e3a4d4144c4f857b9c99e50a8be, type: 3}
+    - {fileID: 21300000, guid: a4cf1d099c0994049a38e73bf9d629dd, type: 3}
+    - {fileID: 21300000, guid: 967cc7f8afb724dd0915a57883580633, type: 3}
+    - {fileID: 21300000, guid: cfbba8cf50d164f2182e614389427136, type: 3}
+    - {fileID: 21300000, guid: 5cfc475b0e3804e81b1233785b390bde, type: 3}
+    - {fileID: 21300000, guid: a986aa660462947b1826545d17ad6691, type: 3}
+    - {fileID: -171679066, guid: 0f8fa26bd67a74039b2bfcc93554e8a2, type: 3}
+    - {fileID: 21300000, guid: 3fcb9b37a91af4aed85fcc8c19c7d112, type: 3}
+    - {fileID: 1619592865, guid: d51ba492cc4d84616b8153b632a0f330, type: 3}
+    - {fileID: 21300000, guid: 829edba0aa42246a2a95e69096ea5862, type: 3}
+    - {fileID: -2007405922, guid: cfbc4902a2e4349e2986894ea4d8330b, type: 3}
+    - {fileID: 21300000, guid: 09de733bd01a24ca6bc8f78192d8f358, type: 3}
+    - {fileID: -1903213204, guid: 8f2e8097fb3aa4be68e23bead3addf6e, type: 3}
+  m_IsVariant: 0

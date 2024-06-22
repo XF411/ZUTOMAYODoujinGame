@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!612988286 &4096168566840163508
+SpriteAtlasAsset:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: TilemapRaw_Intro_Background
+  serializedVersion: 2
+  m_MasterAtlas: {fileID: 0}
+  m_ImporterData:
+    packables:
+    - {fileID: 21300000, guid: 448f84d4c98ca433f94bb36285f88e28, type: 3}
+    - {fileID: 21300000, guid: a9284c82772b542fbbf4fefa8c52de6b, type: 3}
+    - {fileID: 21300000, guid: d973fb761da144f11a301b3f1e4fea64, type: 3}
+    - {fileID: 21300000, guid: 1ab563d815ab9471ca82a19ea4bed346, type: 3}
+    - {fileID: 21300000, guid: a0c49b0d792f94434ac4ae2b465ac0ef, type: 3}
+    - {fileID: 21300000, guid: 1d26fc37bb8864b86b8fc2b5030f9f8d, type: 3}
+    - {fileID: 21300000, guid: a58a403b49cb745f1a195980579c2591, type: 3}
+    - {fileID: 21300000, guid: 18abba081d150477192d8cc78f267825, type: 3}
+  m_IsVariant: 0

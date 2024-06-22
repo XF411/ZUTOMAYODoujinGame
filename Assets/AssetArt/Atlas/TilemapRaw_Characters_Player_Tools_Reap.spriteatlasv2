@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!612988286 &4096168566840163508
+SpriteAtlasAsset:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: TilemapRaw_Characters_Player_Tools_Reap
+  serializedVersion: 2
+  m_MasterAtlas: {fileID: 0}
+  m_ImporterData:
+    packables:
+    - {fileID: 410687281, guid: 7811a038dd5754c44ae4a3e73e814993, type: 3}
+    - {fileID: -1267576793, guid: 9c24647849ffe4a9f86bb08e23b56aa9, type: 3}
+    - {fileID: 142500847, guid: 359a727f710ec4481b12d12e643e34bb, type: 3}
+    - {fileID: 1479672222, guid: 3cacd4414fb854966a1b41cc00ceff08, type: 3}
+  m_IsVariant: 0

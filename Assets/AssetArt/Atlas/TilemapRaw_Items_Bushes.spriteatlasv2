@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!612988286 &4096168566840163508
+SpriteAtlasAsset:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: TilemapRaw_Items_Bushes
+  serializedVersion: 2
+  m_MasterAtlas: {fileID: 0}
+  m_ImporterData:
+    packables:
+    - {fileID: 21300000, guid: f1b1115ca9b854af7bbbb62be7fc47da, type: 3}
+    - {fileID: 21300000, guid: 3ea72fe4137c444dbbbddb8e64ab97ef, type: 3}
+    - {fileID: 21300000, guid: 72d51741fece74e6c9d6cc266bd3e961, type: 3}
+    - {fileID: 21300000, guid: 5f33572e0e10744c1880f988964682e4, type: 3}
+    - {fileID: 21300000, guid: c4989e92ff1a948d5ac205795e5dfeff, type: 3}
+    - {fileID: 21300000, guid: 166c76cc13e124cc29fcade2273d9631, type: 3}
+    - {fileID: 21300000, guid: 8fc792dbeaf99417180031a1f6b289d5, type: 3}
+    - {fileID: 21300000, guid: 3eb9fddd25b8548139877c93ed12a178, type: 3}
+  m_IsVariant: 0

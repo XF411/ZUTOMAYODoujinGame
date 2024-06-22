@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!612988286 &4096168566840163508
+SpriteAtlasAsset:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: TilemapRaw_Characters_Player_Tools_Pickaxe
+  serializedVersion: 2
+  m_MasterAtlas: {fileID: 0}
+  m_ImporterData:
+    packables:
+    - {fileID: 1009581720, guid: 07349beebd62a4d1983fd2b5282ebff0, type: 3}
+    - {fileID: 1031817499, guid: 13649324fe19c4020bfd7384c71ceefe, type: 3}
+    - {fileID: 167148380, guid: ea115e848d5b341b895fc9b496eb83d5, type: 3}
+    - {fileID: -1912059205, guid: 61a41a42f8b70459abbc92cbb52345ca, type: 3}
+  m_IsVariant: 0

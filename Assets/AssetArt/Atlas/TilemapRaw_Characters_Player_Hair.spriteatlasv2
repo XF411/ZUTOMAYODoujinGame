@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!612988286 &4096168566840163508
+SpriteAtlasAsset:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: TilemapRaw_Characters_Player_Hair
+  serializedVersion: 2
+  m_MasterAtlas: {fileID: 0}
+  m_ImporterData:
+    packables:
+    - {fileID: 1656764516, guid: 9ef58f9af8349410eb6d9f277519c9d0, type: 3}
+    - {fileID: 1727370446, guid: 5918465203da34a8a90dada276cbb940, type: 3}
+    - {fileID: 294877457, guid: ba7082f9767c44dc390115a2980c6ed0, type: 3}
+    - {fileID: 1162005675, guid: 427fe565d7eff479784a98bb5533b40f, type: 3}
+    - {fileID: 533588372, guid: 95b7d1699ae004fc788fdf8a62354bac, type: 3}
+    - {fileID: 2107138999, guid: 549bd39fed6d141a9965676c2b4557d5, type: 3}
+    - {fileID: -55989317, guid: 07ee88ad752e145918c5bd59234d155c, type: 3}
+    - {fileID: -2095000084, guid: 4826b20f384ee4fbbaddd9dad2dfb940, type: 3}
+    - {fileID: -1806084134, guid: ea4cfc227ef6d4495b306facced5ab07, type: 3}
+    - {fileID: 1449439484, guid: 9460281083b624cd28f08aa700be80cf, type: 3}
+    - {fileID: 760818281, guid: d7341854cf5b244f9a1b1a1edd38d9b9, type: 3}
+    - {fileID: -1840982026, guid: 86ee522d371aa448eb73a593683955b6, type: 3}
+    - {fileID: -1239170058, guid: 8a0778ccb4eb143dc869f7edd9b5e5eb, type: 3}
+    - {fileID: 1009912252, guid: b24adec5ed6584b90a1e7dd43c77b1d3, type: 3}
+    - {fileID: 92166226, guid: 23992688920a1459a928d036e35a9658, type: 3}
+    - {fileID: 2010432667, guid: 0b5a7931c52bc483082b2e4554ba71cf, type: 3}
+    - {fileID: -1665453071, guid: 4e149b0e767fc42668e738ecf9b4fa7c, type: 3}
+    - {fileID: 319609060, guid: 00a5ef6bdf7fb4297a75af87e67075cb, type: 3}
+    - {fileID: -135704077, guid: 3828640e7e9384e42a8cfb37cbaba91e, type: 3}
+    - {fileID: 1075635385, guid: 71e71e508cc8f4953948f35a7755857c, type: 3}
+    - {fileID: -2041277643, guid: ccb2cfa8e809f4793a6ca0c3bbf71fae, type: 3}
+    - {fileID: 592036834, guid: 94f0581fb66284ad3bc6f3680c2b75ae, type: 3}
+    - {fileID: 530986229, guid: 84df3b52216d04f938809112f6ee026f, type: 3}
+    - {fileID: -695714838, guid: 670560cfe816e420cabb53b24dfaad36, type: 3}
+  m_IsVariant: 0

@@ -42,7 +42,8 @@ namespace GameFramework.Editor
     {
         private const string NormalAtlasDir = "Assets/AssetArt/Atlas";
         private const string UISpritePath = "Assets/AssetRaw/UIRaw";
-        private const string UIAtlasPath = "Assets/AssetRaw/UIRaw/Atlas";
+        private const string UIAtlasPath = "Assets/AssetRaw/UIRaw";
+        private const string TilemapPath = "Assets/AssetRaw/TilemapRaw";
         private static readonly List<string> _dirtyAtlasList = new List<string>();
         private static readonly Dictionary<string, List<string>> _allASprites = new Dictionary<string, List<string>>();
         private static readonly Dictionary<string, string> _uiAtlasMap = new Dictionary<string, string>();
@@ -124,7 +125,7 @@ namespace GameFramework.Editor
 
         public static void OnImportSprite(string assetPath)
         {
-            if (!assetPath.StartsWith(UISpritePath))
+            if (!assetPath.StartsWith(UISpritePath) || !(assetPath.StartsWith(TilemapPath)))
             {
                 return;
             }
@@ -135,7 +136,7 @@ namespace GameFramework.Editor
             {
                 var modify = false;
 
-                if (assetPath.StartsWith(UISpritePath))
+                if (assetPath.StartsWith(UISpritePath) || assetPath.StartsWith(TilemapPath))
                 {
                     if (ti.textureType != TextureImporterType.Sprite)
                     {
@@ -230,7 +231,15 @@ namespace GameFramework.Editor
         public static string GetPackageTag(string fullName)
         {
             fullName = fullName.Replace("\\", "/");
-            int idx = fullName.LastIndexOf("UIRaw", StringComparison.Ordinal);
+            int idx = -1;
+            if (fullName.Contains("UIRaw"))
+            {
+                idx = fullName.LastIndexOf("UIRaw", StringComparison.Ordinal);
+            }
+            else if (fullName.Contains("TilemapRaw"))
+            {
+                idx = fullName.LastIndexOf("TilemapRaw", StringComparison.Ordinal);
+            }
             if (idx == -1)
             {
                 return "";
@@ -315,7 +324,7 @@ namespace GameFramework.Editor
                 return;
             }
 
-            if (!assetPath.StartsWith(UISpritePath))
+            if (!assetPath.StartsWith(UISpritePath) || !assetPath.StartsWith(TilemapPath))
             {
                 return;
             }
@@ -333,7 +342,7 @@ namespace GameFramework.Editor
                 return;
             }
 
-            if (assetPath.StartsWith(UISpritePath))
+            if (assetPath.StartsWith(UISpritePath) || assetPath.StartsWith(TilemapPath))
             {
                 var spriteName = Path.GetFileNameWithoutExtension(assetPath);
                 if (_uiAtlasMap.ContainsKey(spriteName))
@@ -450,7 +459,7 @@ namespace GameFramework.Editor
             List<string> needSaveAtlas = new List<string>();
             m_tempAllASprites.Clear();
             _allASprites.Clear();
-            var findAssets = AssetDatabase.FindAssets("t:sprite", new[] { UIAtlasPath });
+            var findAssets = AssetDatabase.FindAssets("t:sprite", new[] { UIAtlasPath, TilemapPath });
             foreach (var findAsset in findAssets)
             {
                 var path = AssetDatabase.GUIDToAssetPath(findAsset);
