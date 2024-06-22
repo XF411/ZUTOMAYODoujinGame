@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityGameFramework.Runtime;
 
 namespace GameLogic
@@ -44,12 +45,12 @@ namespace GameLogic
         public void OnInputX(float x) 
         {
             //TODO 根据状态机控制焦点对象，现在先只控制角色移动
-            PlayerController.Instance.Move(new UnityEngine.Vector2(x, 0));
+            PlayerController.Instance.Move(new Vector2(x, 0));
         }
         public void OnInputY(float y) 
         {
             //TODO 根据状态机控制焦点对象，现在先只控制角色移动
-            PlayerController.Instance.Move(new UnityEngine.Vector2(0, y));
+            PlayerController.Instance.Move(new Vector2(0, y));
         }
 
 
