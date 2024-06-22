@@ -11,6 +11,7 @@ namespace GameLogic
         Camera MainCamera;
         CinemachineBrain MainCinemachineBrain;
         VitrualCameraList vitrualCameraList;
+        CinemachineVirtualCamera curCamera;
         void IControllerBase.OnEnter()
         {
             if (MainCameraObj == null)
@@ -19,6 +20,7 @@ namespace GameLogic
                 MainCamera = MainCameraObj.GetComponent<Camera>();
                 MainCinemachineBrain = MainCameraObj.GetComponent<CinemachineBrain>();
                 vitrualCameraList = GameObjectCommon.FindComponentWithName<VitrualCameraList>("TransVirtualCamera", MainCameraObj);
+                curCamera = vitrualCameraList.cinemachineVirtualCameras[0];
                 //GameObjectCommon.FindComponentWithName<CinemachineBrain>("MainCamera", MainCameraObj);
             }
         }
@@ -28,6 +30,22 @@ namespace GameLogic
             MainCamera = null;
             MainCinemachineBrain = null;
             GameObject.DestroyImmediate(MainCameraObj);
+        }
+
+        public void LookAt(Transform target) 
+        {
+            if(curCamera != null) 
+            {
+                curCamera.LookAt = target;
+            }
+        }
+
+        public void Follow(Transform target)
+        {
+            if (curCamera != null)
+            {
+                curCamera.Follow = target;
+            }
         }
     }
 

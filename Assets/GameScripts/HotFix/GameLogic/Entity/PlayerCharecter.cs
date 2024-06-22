@@ -1,7 +1,9 @@
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityGameFramework.Runtime;
 
 namespace GameLogic
 {
@@ -12,40 +14,49 @@ namespace GameLogic
     {
 
         private Animator animator;
-        private bool isMoving = false;//TODO 暂时先用这个变量来控制移动,后面改成有限状态机
-        private Vector2 targetGridPosition;
+        public bool isMoving { get; private set; }//TODO 暂时先用这个变量来控制移动,后面改成有限状态机
+        public Vector2 TargetGridPosition { get; private set; }//要移动的目标位置
+        public Vector2 CurrentGridPosition { get; private set; }//角色当前所在位置
 
         public void Init() 
         {
             animator = GetComponent<Animator>();
+            TargetGridPosition = Vector2.zero;
+            CurrentGridPosition = Vector2.zero;//TODO 从当前存档读取玩家位置
+            transform.position = CurrentGridPosition;//TODO 根据存档数据来设置角色模型位置
         }
 
-        public void Move(Vector2 moveV2) 
+        public void Move(Vector2 targetPosition) 
         {
             if (isMoving) return;
-            //TODO 其他处理,计算具体移动距离等等
-            targetGridPosition = new Vector2(Mathf.Round(transform.position.x + moveV2.x), Mathf.Round(transform.position.y + moveV2.y));
-            OnMove(moveV2);
+            //TODO 判断目标位置是否合法
+            TargetGridPosition = targetPosition;//设置要移动的目标位置
+            OnMove();
         }
 
-        public void OnMove(Vector2 moveV2) 
+        public void OnMove() 
         {
 
             //移动的表现逻辑
             isMoving = true;
+            Vector2 moveV2 = TargetGridPosition - (Vector2)transform.position;
             animator.SetBool("isWalk", true);
             animator.SetFloat("X", moveV2.x);
             animator.SetFloat("Y", moveV2.y);
-
-            transform.DOMove(targetGridPosition, 0.5f).OnComplete(() =>
+            Log.Debug(gameObject.name + moveV2 + " on move");
+            transform.DOMove(TargetGridPosition, 0.2f).OnComplete(() =>
             {
-                // 可以在这里重置方向动画等操作
+                CurrentGridPosition = TargetGridPosition;
                 isMoving = false;
-                animator.SetBool("isWalk", false);
-
-                //animator.SetFloat("X", 0);
-                //animator.SetFloat("Y", 0);
+                // 重置方向动画参数
+                animator.SetFloat("X", moveV2.x);
+                animator.SetFloat("Y", moveV2.y);
             });
+        }
+
+        private void Update()
+        {
+            animator.SetBool("isWalk", isMoving);
         }
     }
 }
