@@ -41,9 +41,9 @@ public partial class GameApp: Singleton<GameApp>
     /// </summary>
     private void StartGameLogic()
     {
-        //TODO 加载主界面
+        RPGSytem.Instance.InitRPG();
         InitUIGroup();
-        GameModule.UI.OpenUIForm("MainMenu", UIGroupEnum.MainMenu.ToString());
+        GameModule.UI.OpenUIForm("MainMenu", UIGroupEnum.MainMenu.ToString()); //加载主界面
     }
 
     private void InitUIGroup()
