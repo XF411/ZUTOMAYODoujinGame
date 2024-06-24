@@ -44,16 +44,6 @@ namespace GameLogic
             Enter();
         }
 
-        /// <summary>
-        /// 按下方向键的时候
-        /// </summary>
-        /// <param name="direction"></param>
-        public void OnInputDirection(Vector2 direction) 
-        {
-            //TODO 根据状态机控制焦点对象，现在先只控制角色移动
-            PlayerController.Instance.Move(direction);
-        }
-
         public void EnterGame() 
         {
             //TODO 制作加载界面

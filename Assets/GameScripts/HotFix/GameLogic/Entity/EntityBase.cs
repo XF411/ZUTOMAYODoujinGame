@@ -8,16 +8,6 @@ namespace GameLogic
     //箱子，狗，玩家，NPC等等都应该是一个Entity
     public class EntityBase : MonoBehaviour
     {
-        // Start is called before the first frame update
-        void Start()
-        {
-        
-        }
 
-        // Update is called once per frame
-        void Update()
-        {
-        
-        }
     }
 }

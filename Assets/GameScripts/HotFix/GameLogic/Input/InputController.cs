@@ -2,6 +2,8 @@
 using GameFramework.Runtime;
 using UnityEngine;
 using UnityGameFramework.Runtime;
+using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 
 namespace GameLogic
 {
@@ -9,6 +11,9 @@ namespace GameLogic
     {
         float inputY;
         float inputX;
+        private PlayerInput playerInput;
+        private InputAction moveAction;
+        private InputAction fireAction;
 
         public void OnApplicationPause(bool pause)
         {
@@ -32,6 +37,16 @@ namespace GameLogic
 
         public bool OnInit()
         {
+            playerInput = new PlayerInput();
+            moveAction = playerInput.Player.Move;
+            moveAction.Enable();
+
+            moveAction.started += StartMove;
+            moveAction.canceled += CancelMove;
+
+            fireAction = playerInput.Player.Fire;
+            fireAction.Enable();
+
             return true;
         }
 
@@ -52,33 +67,26 @@ namespace GameLogic
 
         public void OnUpdate()
         {
-            Vector2 moveDirection = Vector2.zero;
-
-            if (Input.GetKey(KeyCode.UpArrow)) 
+            if (isInputMoving)
             {
-                moveDirection = Vector2.up;
+                Vector2 moveDirection = Vector2.zero;
+                moveDirection = moveAction.ReadValue<Vector2>();
+                PlayerController.Instance.OnInputMove(moveDirection);
             }
-            if (Input.GetKey(KeyCode.DownArrow))
-            { 
-                moveDirection = Vector2.down; 
-            }
-                
-            if (Input.GetKey(KeyCode.LeftArrow))
-            { 
-                moveDirection = Vector2.left; 
-            }
-                
-            if (Input.GetKey(KeyCode.RightArrow)) 
-            { 
-                moveDirection = Vector2.right; 
-            }
-                
+        }
 
-            if (moveDirection != Vector2.zero)
-            {
-                //Log.Debug(moveDirection);
-                RPGSytem.Instance.OnInputDirection(moveDirection);
-            }
+        bool isInputMoving = false;
+
+        private void StartMove(InputAction.CallbackContext context) 
+        {
+            isInputMoving = true;
+            PlayerController.Instance.PlayerStartMove();
+        }
+
+        private void CancelMove(InputAction.CallbackContext context)
+        {
+            isInputMoving = false;
+            PlayerController.Instance.PlayerStopMove();
         }
 
         void IControllerBase.OnEnter()

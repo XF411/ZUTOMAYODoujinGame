@@ -18,20 +18,38 @@ namespace GameLogic
         /// </summary>
         public PlayerCharecter PlayerCharecter { get; private set; }
          
-        /// <summary>
-        /// 当前角色的坐标位置
-        /// </summary>
 
-        public void Move(Vector2 moveV2)
+        public void PlayerStartMove() 
+        {
+            PlayerCharecter.StartMove();
+        }
+
+        public void PlayerStopMove() 
+        {
+            PlayerCharecter.StopMove();
+        }
+
+        public void OnInputMove(Vector2 moveV2)
         {
             if (PlayerCharecter != null)
             {
-                Vector2 targetGridPosition = PlayerCharecter.CurrentGridPosition + moveV2;
-                if (PlayerCharecter.CurrentGridPosition != targetGridPosition 
-                    && PlayerCharecter.TargetGridPosition != targetGridPosition)
+                //判断到底是前后移动还是左右移动
+                //禁止斜着移动
+                if (Mathf.Abs(moveV2.x) > Mathf.Abs(moveV2.y))
                 {
-                    PlayerCharecter.Move(targetGridPosition);
+                    moveV2.y = 0;
                 }
+                else if (Mathf.Abs(moveV2.x) < Mathf.Abs(moveV2.y))
+                {
+                    moveV2.x = 0;
+                }
+                else
+                {
+                    moveV2.x = 0;
+                    moveV2.y = 0;
+                }
+                Vector2 targetGridPosition = PlayerCharecter.CurrentGridPosition + moveV2;
+                PlayerCharecter.Move2TargetPosition(targetGridPosition);
             }
         }
 
